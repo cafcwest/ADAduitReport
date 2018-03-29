@@ -1,0 +1,2 @@
+﻿$Output = Get-ADGroupMember -identity "CN=cn,OU=ou,OU=ou,DC=dc,DC=dc" -Recursive | Get-ADUser -Property DisplayName | Select Name,ObjectClass | Out-String
+send-mailmessage -from "<xxx@xxx.com>" -to "<xxx@xxx.com>" -subject "name description Permissions Check" -body $Output -smtpServer localhost
